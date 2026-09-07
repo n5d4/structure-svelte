@@ -25,7 +25,7 @@ static `build/` output; no Procfile or server is needed.
 
 ## Notes
 
-- Section backgrounds go through `src/lib/components/BackgroundMedia.svelte` — it switches to
-  the mobile GIF at <=768px, and pass it an `.mp4`/`.webm` import instead of a `.gif` and it
-  renders an autoplaying looped video. Converting the large GIFs (~80MB desktop / ~30MB mobile)
-  to video is the biggest pending optimization.
+- Section backgrounds go through `src/lib/components/BackgroundMedia.svelte`: autoplaying
+  looped H.264 MP4s (converted from the original ~110MB of GIFs down to ~6.6MB), with mobile
+  variants swapped in at <=768px. It also accepts `.gif`/image imports, rendered as a cover
+  background instead.

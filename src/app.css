@@ -11,6 +11,7 @@ body {
 .app {
   position: relative;
   height: 100%;
+  user-select: none;
   overscroll-behavior: none;
   touch-action: none;
 }
@@ -18,7 +19,7 @@ body {
 .sections {
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease;
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
   will-change: transform;
 }
 
@@ -45,18 +46,31 @@ body {
 }
 
 .logo {
-  max-width: min(750px, 90vw);
+  max-width: min(850px, 90vw);
   height: auto;
+  user-select: none;
+}
+
+.corner-logo {
+  user-select: none;
+  max-width: 250px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 .section-title {
+  font-family: 'Bona Nova SC', serif;
   position: relative;
   font-size: 5rem;
   text-align: center;
-  padding: 20px;
   color: white;
   z-index: 2;
-  border: 3px solid white;
+  padding: 0.25em 0;
+  user-select: none;
 }
 
 .section-text {
@@ -64,6 +78,8 @@ body {
   color: white;
   text-align: center;
   font-size: 2em;
+  user-select: none;
+  max-width: 30em;
 }
 
 .content {
@@ -73,42 +89,98 @@ body {
   position: relative;
 }
 
+/* Entrance animations, matching the framer-motion slide/fade in the React app. */
+.reveal {
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.reveal.from-top {
+  transform: translateY(-100px);
+}
+
+.reveal.from-bottom {
+  transform: translateY(100px);
+}
+
+.reveal.slow {
+  transition-duration: 1.25s;
+}
+
+.reveal.shown {
+  opacity: 1;
+  transform: none;
+}
+
 .indicator {
   position: fixed;
   top: 50%;
-  right: 20px;
+  right: 2%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  margin: 5px;
+  width: 12px;
+  height: 12px;
   padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: gray;
+  background-color: whitesmoke;
+  margin-bottom: 10px;
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .dot.active {
-  background-color: white;
+  background-color: red;
+}
+
+.dot:hover {
+  transform: scale(1.4);
+}
+
+.custom-button {
+  user-select: none;
+  background-color: transparent;
+  color: white;
+  border: 3.5px solid red;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: red;
 }
 
 .social-icon {
   margin: 0 10px;
-  color: white;
   transition: transform 0.3s ease, color 0.3s ease;
   background: none;
   border: none;
   cursor: pointer;
+  display: inline-block;
 }
 
 .social-icon:hover {
   transform: scale(1.1);
-  color: #ddd;
+}
+
+.instagram-icon {
+  color: #e4405f;
+}
+
+.facebook-icon {
+  color: #1877f2;
+}
+
+.contact-icon {
+  color: goldenrod;
 }
 
 .icon-container {
@@ -121,7 +193,7 @@ body {
   padding: 20px;
   max-width: 500px;
   width: 80%;
-  background: white;
+  background: rgba(255, 255, 255, 0.92);
   color: black;
 }
 
@@ -139,12 +211,41 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+.hr-arp,
+.hr-cf {
+  height: 2px;
+  background-color: white;
+  border: 0;
+}
+
+.hr-arp {
+  max-width: 30em;
+}
+
+.hr-cf {
+  max-width: 50em;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 80%;
+  }
+
   .section-title {
-    font-size: 3rem;
+    font-size: 1.9rem;
+    padding: 0.1em;
   }
 
   .section-text {
-    font-size: 1.25em;
+    font-size: 1.2rem;
+    max-width: 20em;
+  }
+
+  .hr-arp {
+    max-width: 19em;
+  }
+
+  .hr-cf {
+    max-width: 20em;
   }
 }

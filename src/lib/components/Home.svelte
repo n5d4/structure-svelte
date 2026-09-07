@@ -15,9 +15,8 @@
     <div class="reveal from-top" class:shown={active}>
       <img src={logo} alt="Structure MKE" class="logo" />
     </div>
-    <br />
-    <br />
     <div class="reveal from-bottom" class:shown={active}>
+      <p class="tagline">Automotive performance &amp; custom fabrication — Milwaukee, WI</p>
       <div class="icon-container">
         <a
           href="https://www.instagram.com/structure_fab_dsg"
@@ -42,6 +41,9 @@
         </button>
       </div>
     </div>
+  </div>
+  <div class="scroll-hint" class:shown={active} aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
   </div>
   <ContactModal open={modalOpen} onclose={() => (modalOpen = false)}>
     <div class="about-us">

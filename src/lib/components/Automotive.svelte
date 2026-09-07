@@ -13,8 +13,9 @@
   <BackgroundMedia src={automotiveDesktop} mobileSrc={automotiveMobile} />
   <img src={logo} alt="Structure MKE logo" class="corner-logo" />
   <div class="content">
+    <p class="kicker reveal from-top" class:shown={active}>Repair &middot; Performance</p>
     <div class="section-title reveal from-top" class:shown={active}>Automotive</div>
-    <hr class="hr-arp" />
+    <span class="accent-bar"></span>
     <div class="reveal from-bottom" class:shown={active}>
       <p class="section-text">From routine maintenance to intricate repairs, we've got you covered.</p>
     </div>

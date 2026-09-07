@@ -16,7 +16,7 @@
       <img src={logo} alt="Structure MKE" class="logo" />
     </div>
     <div class="reveal from-bottom" class:shown={active}>
-      <p class="tagline">Automotive performance &amp; custom fabrication — Milwaukee, WI</p>
+      <p class="tagline">Automotive performance &amp; custom fabrication | Milwaukee, WI</p>
       <div class="icon-container">
         <a
           href="https://www.instagram.com/structure_fab_dsg"

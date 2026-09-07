@@ -7,7 +7,16 @@
   let { src, mobileSrc = null } = $props();
 
   const isMobile = new MediaQuery('(max-width: 768px)');
-  const active = $derived(mobileSrc && isMobile.current ? mobileSrc : src);
+
+  // Start from the desktop src on both server and client so prerendered HTML
+  // matches, then swap in the mobile variant post-hydration (hydration does
+  // not repair attribute mismatches, so a $derived is not enough here).
+  // svelte-ignore state_referenced_locally
+  let active = $state(src);
+  $effect(() => {
+    active = mobileSrc && isMobile.current ? mobileSrc : src;
+  });
+
   const isVideo = $derived(/\.(mp4|webm)(\?|$)/i.test(active));
 </script>
 

@@ -1,6 +1,6 @@
 <script>
-  import plasmaDesktop from '$lib/assets/plasma.gif';
-  import plasmaMobile from '$lib/assets/plasma-mobile.gif';
+  import plasmaDesktop from '$lib/assets/plasma.mp4';
+  import plasmaMobile from '$lib/assets/plasma-mobile.mp4';
   import logo from '$lib/assets/logo.png';
   import BackgroundMedia from './BackgroundMedia.svelte';
 

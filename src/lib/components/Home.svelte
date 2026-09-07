@@ -1,6 +1,6 @@
 <script>
-  import homeDesktop from '$lib/assets/home.gif';
-  import homeMobile from '$lib/assets/home-mobile.gif';
+  import homeDesktop from '$lib/assets/home.mp4';
+  import homeMobile from '$lib/assets/home-mobile.mp4';
   import logo from '$lib/assets/logo.png';
   import BackgroundMedia from './BackgroundMedia.svelte';
   import ContactModal from './ContactModal.svelte';

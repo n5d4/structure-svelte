@@ -1,6 +1,6 @@
 <script>
-  import automotiveDesktop from '$lib/assets/automotive.gif';
-  import automotiveMobile from '$lib/assets/automotive-mobile.gif';
+  import automotiveDesktop from '$lib/assets/automotive.mp4';
+  import automotiveMobile from '$lib/assets/automotive-mobile.mp4';
   import logo from '$lib/assets/logo.png';
   import BackgroundMedia from './BackgroundMedia.svelte';
   import ContactModal from './ContactModal.svelte';

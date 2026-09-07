@@ -16,7 +16,7 @@ npm run dev
 npm run build
 ```
 
-Outputs a fully static site to `build/` — no server code. Preview it locally with `npm run preview`.
+Outputs a fully static site to `build/` with no server code. Preview it locally with `npm run preview`.
 
 ## Deploy (Railway)
 

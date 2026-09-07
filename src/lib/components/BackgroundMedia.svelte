@@ -25,3 +25,4 @@
 {:else}
   <div class="background-media" style="background-image: url({active})"></div>
 {/if}
+<div class="background-scrim"></div>
